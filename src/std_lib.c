@@ -1,38 +1,15 @@
 #include "std_lib.h"
 
-// int div(int a, int b)
-// {
-//     int negatif;
-//     int hasil;
-//     int cek_pembagi;
-//     int shift;
-
-//     if (b == 0) return 0; 
-
-//     negatif = 0;
-//     if (a < 0) { a = -a; negatif ^= 1; }
-//     if (b < 0) { b = -b; negatif ^= 1; }
-
-//     hasil = 0;
-//     cek_pembagi = b;
-//     shift = 0;
-
-//     while ((cek_pembagi << 1) <= a) {
-//         cek_pembagi <<= 1;
-//         shift++;
-//     }
-
-//     while (shift >= 0) {
-//         if (a >= cek_pembagi) {
-//             a -= cek_pembagi;
-//             hasil |= (1 << shift);
-//         }
-//         cek_pembagi >>= 1;
-//         shift--;
-//     }
-
-//     return negatif ? -hasil : hasil;
-// }
+int div(int a, int b)
+{
+    int result;
+    if (b == 0) {
+        printString("Error: Division by zero\r\n");
+        return;
+    }
+    result = a / b;
+    return result;
+}
 
 int mod(int a, int b)
 {
@@ -67,11 +44,14 @@ int mod(int a, int b)
 
 int strcmp(char *str1, char *str2)
 {
-    while (*str1 && (*str1 == *str2)) {
-        str1++;
-        str2++;
+    int i = 0;
+    while (str1[i] != '\0' && str2[i] != '\0') {
+        if (str1[i] != str2[i]) {
+            return 0;
+        }
+        i++;
     }
-    return (unsigned char)*str1 - (unsigned char)*str2;
+    return str1[i] == '\0' && str2[i] == '\0';
 }
 
 void strcpy(char *dst, char *src)
@@ -87,66 +67,67 @@ void clear(byte *buf, unsigned int size)
     }
 }
 
-// void atoi(char *str, int *num)
-// {
-//     int result;
-//     int sign;
+int atoi(char *str)
+{
+    int result;
+    int sign;
+    int i;
+    
+    result = 0;
+    sign = 1;
+    i = 0;
 
-//     result = 0;
-//     sign = 1;
+    if (str[0] == '-') {
+        sign = -1;
+        i++;
+    }
 
-//     while (*str == ' ') str++;
+    while (str[i] != '\0') {
+        result = result * 10 + (str[i] - '0');
+        i++;
+    }
 
-//     if (*str == '-') {
-//         sign = -1;
-//         str++;
-//     } else if (*str == '+') {
-//         str++;
-//     }
+    return sign * result;
+}
 
-//     while (*str >= '0' && *str <= '9') {
-//         result = result * 10 + (*str - '0');
-//         str++;
-//     }
+void itoa(int num, char *str)
+{
+    int i = 0;
+    int isNegative = 0;
+    int start, end;
+    char temp;
 
-//     *num = result * sign;
-// }
+    if (num == 0) {
+        str[i++] = '0';
+        str[i] = '\0';
+        return;
+    }
 
-// void itoa(int num, char *str)
-// {
-//     int i, is_negative, j, k;
-//     char temp;
+    if (num < 0) {
+        isNegative = 1;
+        num = -num;
+    }
 
-//     i = 0;
-//     is_negative = 0;
+    while (num != 0) {
+        int div = num / 10;
+        int digit = num - div * 10;
+        str[i++] = digit + '0';
+        num = div;
+    }
 
-//     if (num == 0) {
-//         str[i++] = '0';
-//         str[i] = '\0';
-//         return;
-//     }
+    if (isNegative) {
+        str[i++] = '-';
+    }
 
-//     if (num < 0) {
-//         is_negative = 1;
-//         num = -num;
-//     }
+    str[i] = '\0';
 
-//     while (num > 0) {
-//         int div = num / 10;
-//         int digit = num - (div * 10);  // digit terakhir tanpa %
-//         str[i++] = digit + '0';
-//         num = div;
-//     }
-
-//     if (is_negative) {
-//         str[i++] = '-';
-//     }
-
-//     str[i] = '\0';
-
-//     for (j = 0, k = i - 1; j < k; j++, k--) {
-//         temp = str[j];
-//         str[j] = str[k];
-//         str[k] = temp;
-//     }
-// }
+    start = 0;
+    end = i - 1;
+    while (start < end) {
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
