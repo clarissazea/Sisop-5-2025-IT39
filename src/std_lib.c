@@ -1,38 +1,38 @@
 #include "std_lib.h"
 
-int div(int a, int b)
-{
-    int negatif;
-    int hasil;
-    int cek_pembagi;
-    int shift;
+// int div(int a, int b)
+// {
+//     int negatif;
+//     int hasil;
+//     int cek_pembagi;
+//     int shift;
 
-    if (b == 0) return 0; 
+//     if (b == 0) return 0; 
 
-    negatif = 0;
-    if (a < 0) { a = -a; negatif ^= 1; }
-    if (b < 0) { b = -b; negatif ^= 1; }
+//     negatif = 0;
+//     if (a < 0) { a = -a; negatif ^= 1; }
+//     if (b < 0) { b = -b; negatif ^= 1; }
 
-    hasil = 0;
-    cek_pembagi = b;
-    shift = 0;
+//     hasil = 0;
+//     cek_pembagi = b;
+//     shift = 0;
 
-    while ((cek_pembagi << 1) <= a) {
-        cek_pembagi <<= 1;
-        shift++;
-    }
+//     while ((cek_pembagi << 1) <= a) {
+//         cek_pembagi <<= 1;
+//         shift++;
+//     }
 
-    while (shift >= 0) {
-        if (a >= cek_pembagi) {
-            a -= cek_pembagi;
-            hasil |= (1 << shift);
-        }
-        cek_pembagi >>= 1;
-        shift--;
-    }
+//     while (shift >= 0) {
+//         if (a >= cek_pembagi) {
+//             a -= cek_pembagi;
+//             hasil |= (1 << shift);
+//         }
+//         cek_pembagi >>= 1;
+//         shift--;
+//     }
 
-    return negatif ? -hasil : hasil;
-}
+//     return negatif ? -hasil : hasil;
+// }
 
 int mod(int a, int b)
 {
@@ -87,30 +87,30 @@ void clear(byte *buf, unsigned int size)
     }
 }
 
-void atoi(char *str, int *num)
-{
-    int result;
-    int sign;
+// void atoi(char *str, int *num)
+// {
+//     int result;
+//     int sign;
 
-    result = 0;
-    sign = 1;
+//     result = 0;
+//     sign = 1;
 
-    while (*str == ' ') str++;
+//     while (*str == ' ') str++;
 
-    if (*str == '-') {
-        sign = -1;
-        str++;
-    } else if (*str == '+') {
-        str++;
-    }
+//     if (*str == '-') {
+//         sign = -1;
+//         str++;
+//     } else if (*str == '+') {
+//         str++;
+//     }
 
-    while (*str >= '0' && *str <= '9') {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
+//     while (*str >= '0' && *str <= '9') {
+//         result = result * 10 + (*str - '0');
+//         str++;
+//     }
 
-    *num = result * sign;
-}
+//     *num = result * sign;
+// }
 
 // void itoa(int num, char *str)
 // {
@@ -132,8 +132,10 @@ void atoi(char *str, int *num)
 //     }
 
 //     while (num > 0) {
-//         str[i++] = (num % 10) + '0';
-//         num /= 10;
+//         int div = num / 10;
+//         int digit = num - (div * 10);  // digit terakhir tanpa %
+//         str[i++] = digit + '0';
+//         num = div;
 //     }
 
 //     if (is_negative) {
