@@ -112,39 +112,39 @@ void atoi(char *str, int *num)
     *num = result * sign;
 }
 
-void itoa(int num, char *str)
-{
-    int i, is_negative, j, k;
-    char temp;
+// void itoa(int num, char *str)
+// {
+//     int i, is_negative, j, k;
+//     char temp;
 
-    i = 0;
-    is_negative = 0;
+//     i = 0;
+//     is_negative = 0;
 
-    if (num == 0) {
-        str[i++] = '0';
-        str[i] = '\0';
-        return;
-    }
+//     if (num == 0) {
+//         str[i++] = '0';
+//         str[i] = '\0';
+//         return;
+//     }
 
-    if (num < 0) {
-        is_negative = 1;
-        num = -num;
-    }
+//     if (num < 0) {
+//         is_negative = 1;
+//         num = -num;
+//     }
 
-    while (num > 0) {
-        str[i++] = (num % 10) + '0';
-        num /= 10;
-    }
+//     while (num > 0) {
+//         str[i++] = (num % 10) + '0';
+//         num /= 10;
+//     }
 
-    if (is_negative) {
-        str[i++] = '-';
-    }
+//     if (is_negative) {
+//         str[i++] = '-';
+//     }
 
-    str[i] = '\0';
+//     str[i] = '\0';
 
-    for (j = 0, k = i - 1; j < k; j++, k--) {
-        temp = str[j];
-        str[j] = str[k];
-        str[k] = temp;
-    }
-}
+//     for (j = 0, k = i - 1; j < k; j++, k--) {
+//         temp = str[j];
+//         str[j] = str[k];
+//         str[k] = temp;
+//     }
+// }
