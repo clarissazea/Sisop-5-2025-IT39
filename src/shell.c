@@ -4,11 +4,6 @@
 
 unsigned int seed = 12345;  // seed awal untuk random
 
-// Fungsi random sederhana (LCG)
-// int rand() {
-//     seed = (1103515245 * seed + 12345) & 0x7fffffff;
-//     return seed;
-// }
 
 // Fungsi membandingkan dua string, hasil 1 jika sama, 0 jika beda
 int strEquals(char *s1, char *s2) {
