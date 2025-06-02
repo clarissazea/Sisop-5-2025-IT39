@@ -2,13 +2,11 @@
 
 int div(int a, int b)
 {
-    int result;
     if (b == 0) {
         printString("Error: Division by zero\r\n");
-        return;
+        return '\0';
     }
-    result = a / b;
-    return result;
+    return a / b;
 }
 
 int mod(int a, int b)
