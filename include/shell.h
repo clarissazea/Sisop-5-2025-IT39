@@ -6,6 +6,7 @@
 void shell();
 void parseCommand(char *buf, char *cmd, char arg[2][64]);
 
-// Tambahkan fungsi bila perlu
+// Penambahan fungsi
+void executeCommand(char *cmd, char arg[2][64]);
 
 #endif // __SHELL_H__
