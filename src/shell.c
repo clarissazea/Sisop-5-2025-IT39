@@ -51,7 +51,7 @@ void shell() {
         } else if (strcmp(cmd, "mul")) {
           result = a * b;
         } else if (strcmp(cmd, "div")) {
-          div(a, b);
+          result = div(a, b);
         }
 
         itoa(result, resStr);
