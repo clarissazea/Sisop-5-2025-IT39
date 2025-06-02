@@ -4,11 +4,9 @@
 #include "std_type.h"
 
 void shell();
+void handleYogurt();
 void parseCommand(char *buf, char *cmd, char arg[2][64]);
 
-// Penambahan fungsi
-void executeCommand(char *cmd, char arg[2][64]);
-
-extern char currentPrompt[32];
+// Tambahkan fungsi bila perlu
 
 #endif // __SHELL_H__
