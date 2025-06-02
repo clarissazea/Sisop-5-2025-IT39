@@ -14,5 +14,6 @@ link:
 	ld86 -o bin/kernel.bin -d bin/kernel.o bin/kernel-asm.o bin/std_lib.o bin/shell.o
 	dd if=bin/kernel.bin of=floppy.img bs=512 seek=1 count=15 conv=notrunc
 build: prepare bootloader stdlib shell kernel link
-clean: rm -f bin/*
+clean:
+	rm -f bin/*
 run: clean build
