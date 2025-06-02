@@ -12,7 +12,7 @@ kernel:
 	bcc -ansi -Iinclude -c src/kernel.c -o bin/kernel.o
 link:
 	ld86 -o bin/kernel.bin -d bin/kernel.o bin/kernel-asm.o bin/std_lib.o bin/shell.o
-	dd if=bin/kernel.bin of=floppy.img bs=512 seek=1 count=15 conv=notrunc
+	dd if=bin/kernel.bin of=bin/floppy.img bs=512 seek=1 count=15 conv=notrunc
 build: prepare bootloader stdlib shell kernel link
 clean:
 	rm -f bin/*
