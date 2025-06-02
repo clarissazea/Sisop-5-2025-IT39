@@ -2,14 +2,21 @@
 
 int div(int a, int b)
 {
+    int negatif;
+    int hasil;
+    int cek_pembagi;
+    int shift;
+
     if (b == 0) return 0; 
-    int negatif = 0;
+
+    negatif = 0;
     if (a < 0) { a = -a; negatif ^= 1; }
     if (b < 0) { b = -b; negatif ^= 1; }
 
-    int hasil = 0;
-    int cek_pembagi = b;
-    int shift = 0;
+    hasil = 0;
+    cek_pembagi = b;
+    shift = 0;
+
     while ((cek_pembagi << 1) <= a) {
         cek_pembagi <<= 1;
         shift++;
@@ -29,11 +36,20 @@ int div(int a, int b)
 
 int mod(int a, int b)
 {
-  if (b == 0) return -1;
-    int cek_pembagi = b;
-    int shift = 0;
+    int negatif;
+    int cek_pembagi;
+    int shift;
 
-    while ((temp_b << 1) <= a) {
+    if (b == 0) return -1;
+
+    negatif = 0;
+    if (a < 0) { a = -a; negatif = 1; }
+    if (b < 0) { b = -b; }
+
+    cek_pembagi = b;
+    shift = 0;
+
+    while ((cek_pembagi << 1) <= a) {
         cek_pembagi <<= 1;
         shift++;
     }
@@ -46,35 +62,38 @@ int mod(int a, int b)
         shift--;
     }
 
-    return a;
+    return negatif ? -a : a;
 }
 
-bool strcmp(char *str1, char *str2)
+int strcmp(char *str1, char *str2)
 {
     while (*str1 && (*str1 == *str2)) {
         str1++;
         str2++;
     }
-    return *str1 == *str2;
+    return (unsigned char)*str1 - (unsigned char)*str2;
 }
 
 void strcpy(char *dst, char *src)
 {
-  while ((*dest++ = *src++));
+    while ((*dst++ = *src++));
 }
 
 void clear(byte *buf, unsigned int size)
 {
-    unsigned char *p = (unsigned char *)mem;
-    for (int i = 0; i < len; i++) {
-        p[i] = 0;
+    unsigned int i;
+    for (i = 0; i < size; i++) {
+        buf[i] = 0;
     }
 }
 
 void atoi(char *str, int *num)
 {
-    int result = 0;
-    int sign = 1;
+    int result;
+    int sign;
+
+    result = 0;
+    sign = 1;
 
     while (*str == ' ') str++;
 
@@ -95,8 +114,11 @@ void atoi(char *str, int *num)
 
 void itoa(int num, char *str)
 {
-    int i = 0;
-    int is_negative = 0;
+    int i, is_negative, j, k;
+    char temp;
+
+    i = 0;
+    is_negative = 0;
 
     if (num == 0) {
         str[i++] = '0';
@@ -120,8 +142,8 @@ void itoa(int num, char *str)
 
     str[i] = '\0';
 
-    for (int j = 0, k = i - 1; j < k; j++, k--) {
-        char temp = str[j];
+    for (j = 0, k = i - 1; j < k; j++, k--) {
+        temp = str[j];
         str[j] = str[k];
         str[k] = temp;
     }
