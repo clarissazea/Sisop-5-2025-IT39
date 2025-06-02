@@ -10,7 +10,7 @@ int strcmp(char *str1, char *str2);
 void strcpy(char *dst, char *src);
 void clear(byte *buf, unsigned int size);
 
-void atoi(char *str, int *num);
+int atoi(char *str);
 void itoa(int num, char *str);
 
 #endif // __STD_LIB_H__
