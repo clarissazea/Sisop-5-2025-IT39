@@ -44,23 +44,23 @@ void shell() {
             }
         } else if (strcmp(cmd, "grandcompany")) {
             if (strcmp(args[0], "maelstrom")) {
-                clearScreen();
                 textColor = 0x0C; // merah terang
+                clearScreen(textColor);
                 currentGC = STORM;
             } else if (strcmp(args[0], "twinadder")) {
-                clearScreen();
                 textColor = 0x0E; // kuning
+                clearScreen(textColor);
                 currentGC = SERPENT;
             } else if (strcmp(args[0], "immortalflames")) {
-                clearScreen();
                 textColor = 0x09; // biru
+                clearScreen(textColor);
                 currentGC = FLAME;
             } else {
                 printString("Error: Unknown Grand Company\r\n");
             }
         } else if (strcmp(cmd, "clear")) {
-            clearScreen();
             textColor = 0x07;
+            clearScreen(textColor);
             currentGC = NONE;
             printString("Para Grand Company sedih, kamu netral.\r\n");
         } else if (strcmp(cmd, "add") || strcmp(cmd, "sub") || strcmp(cmd, "mul") || strcmp(cmd, "div")) {
