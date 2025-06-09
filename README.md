@@ -229,7 +229,7 @@ void readString(char *buf) {
   }
 }
 ```
-variabel `buf` adalah imput dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.  
+variabel `buf` adalah input dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.  
 Fungsi `clearScreen` dijelaskan di [Soal 4](###Soal-4)
 
 ### Soal 1
