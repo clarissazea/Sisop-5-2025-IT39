@@ -180,16 +180,16 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
-# Soal 1
-Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
+### Soal 1
 
-# Soal 2
-Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
 
-# Soal 3
-Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
+### Soal 2
 
-# Soal 4
+
+### Soal 3
+
+
+### Soal 4
 Dikerjakan oleh Ahmad Wildan Fawwaz (5027241001)
 
 Inti soal:    
