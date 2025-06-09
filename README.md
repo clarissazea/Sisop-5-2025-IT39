@@ -180,6 +180,14 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
+Kami mengubah/melengkapi file-file berikut.
+* [kernel.c](src/kernel.c)
+* [std_lib.c](src/std_lib.c)
+* [std_lib.h](include/std_lib.h) (hanya mengubah tipe variabel)
+* [shell.c](src/shell.c) (hardcode disini)
+* [shell.h](include/shell.h) (menyesuaikan dengan fungsi yang ada di `shell.c`)
+* [makefile](./makefile)
+
 Pertama-tama kami melengkapi fungsi yang ada di `kernel.c` sebagai file utama untuk menjalankan OS.
 ```c
 int textColor = 0x07; //default (putih)
