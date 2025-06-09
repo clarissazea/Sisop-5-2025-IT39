@@ -198,7 +198,41 @@ Inti soal:
 - grandcompany immortalflames: clear screen + teks jadi biru + prompt jadi user@Flame
 - grandcompany <selain atau kosong>: tampilkan pesan error.  
 
+Implementasi Kode: 
+Edit pada file Shell.c
+Pada bagian setelah if else berikut 
+```c
+if (strcmp(cmd, "yo")) {```   
+Tepatnya setelah di bagian
+```c
+printString("Username changed to user\r\n");  
+        }  
+    }```   
 
+Tambahkan kode berikut:
+```c
+} else if (strcmp(cmd, "grandcompany")) {  
+        if (strcmp(args[0], "maelstrom")) {  
+            textColor = 0x0C; // merah terang  
+            clearScreen(textColor);  
+            currentGC = STORM;  
+        } else if (strcmp(args[0], "twinadder")) {  
+            textColor = 0x0E; // kuning  
+            clearScreen(textColor);  
+            currentGC = SERPENT;  
+        } else if (strcmp(args[0], "immortalflames")) {  
+            textColor = 0x09; // biru  
+            clearScreen(textColor);  
+            currentGC = FLAME;  
+        } else {  
+            printString("Error: Unknown Grand Company\r\n");  
+        }  
+    } else if (strcmp(cmd, "clear")) {  
+        textColor = 0x07;  
+        clearScreen(textColor);  
+        currentGC = NONE;  
+        printString("Para Grand Company sedih, kamu netral.\r\n");  
+    }```
 
 # Soal 5
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
