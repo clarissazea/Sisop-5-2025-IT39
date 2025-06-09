@@ -503,6 +503,10 @@ Penjelasan Alur:
 
 5. Shell mencetak hasil.
 
+#### Dokumentasi
+
+![image](https://github.com/user-attachments/assets/2baeb317-f60c-4646-b193-7e6e05595543)
+
   
 ### Soal 6
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
