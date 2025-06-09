@@ -242,6 +242,7 @@ Set warna sesuai perintah: `0x0C` (merah), `0x0E` (kuning), `0x09` (biru).
 Fungsi `clearScreen(textColor)` dipanggil untuk membersihkan terminal dengan warna baru.   
 Variabel `currentGC` diatur untuk mengubah user pada prompt.   
 
+Inti soal:   
 Setelah masuk Grand Company, nama pengguna berubah menjadi user@Storm, user@Serpent, atau user@Flame.   
 Tambahkan implementasi `printString(username)` ke kode shell.c pada bagian berikut:   
 shell.c
@@ -258,6 +259,50 @@ printString(username);
     else if (currentGC == FLAME) printString("@Flame");  
     printString("> ");
 ```
+Penjelasan:   
+Nama pengguna ditampilkan bersama GC yang aktif sesuai enum `currentGC`.   
+Diubah ketika grandcompany dijalankan.   
+`user@Storm>`, `user@Serpent>`, dan `user@Flame>` ditampilkan sebagai prompt.   
+
+Inti soal:   
+`clear`: membersihkan terminal dan mengembalikan warna ke default (putih).   
+Prompt pengguna kembali menjadi `user>`, tanpa Grand Company.   
+
+Implementasi kodenya:   
+```c
+} else if (strcmp(cmd, "clear")) {
+    textColor = 0x07;
+    clearScreen(textColor);
+    currentGC = NONE;
+    printString("Para Grand Company sedih, kamu netral.\r\n");
+}
+```
+Penjelasan:   
+`textColor` dikembalikan ke default `0x07` (putih).   
+`currentGC` di-set ke NONE → tidak menampilkan @Storm dsb.   
+Menampilkan pesan "Para Grand Company sedih, kamu netral."   
+
+Fungsi `clearScreen(int textColor)`   
+Implementasi kodenya:   
+kernel.c   
+```c
+void clearScreen(textColor) {
+  int i;
+  int screenSize = 80 * 25;
+  for (i = 0; i < screenSize; i++) {
+    putInMemory(0xB800, i * 2, ' ');
+    putInMemory(0xB800, i * 2 + 1, textColor);
+  }
+  interrupt(0x10, 0x0200, 0, 0, 0);
+}
+```
+Penjelasan:   
+Mengosongkan semua karakter layar (' ') dan mewarnainya dengan atribut `textColor`.   
+Memastikan seluruh layar dibersihkan dan diberi warna sesuai Grand Company.   
+`putInMemory` langsung mengakses memori video.   
+
+## Dokumentasi
+
 
 
 # Soal 5
