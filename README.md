@@ -193,10 +193,10 @@ Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
 Dikerjakan oleh Ahmad Wildan Fawwaz (5027241001)
 
 Inti soal:    
-- grandcompany maelstrom: clear screen + teks jadi merah + prompt jadi user@Storm
-- grandcompany twinadder: clear screen + teks jadi kuning + prompt jadi user@Serpent
-- grandcompany immortalflames: clear screen + teks jadi biru + prompt jadi user@Flame
-- grandcompany <selain atau kosong>: tampilkan pesan error.  
+- `grandcompany maelstrom`: clear screen + teks jadi merah + prompt jadi user@Storm
+- `grandcompany twinadder`: clear screen + teks jadi kuning + prompt jadi user@Serpent
+- `grandcompany immortalflames`: clear screen + teks jadi biru + prompt jadi user@Flame
+- `grandcompany <selain atau kosong>`: tampilkan pesan error.  
 
 Implementasi Kode: 
 Edit pada file Shell.c
@@ -236,6 +236,28 @@ Tambahkan kode berikut:
         printString("Para Grand Company sedih, kamu netral.\r\n");  
     }
 ```
+Penjelasan:   
+Kode tersebut untuk memeriksa argumen `grandcompany`.   
+Set warna sesuai perintah: `0x0C` (merah), `0x0E` (kuning), `0x09` (biru).   
+Fungsi `clearScreen(textColor)` dipanggil untuk membersihkan terminal dengan warna baru.   
+Variabel `currentGC` diatur untuk mengubah user pada prompt.   
+
+Setelah masuk Grand Company, nama pengguna berubah menjadi user@Storm, user@Serpent, atau user@Flame.   
+Tambahkan implementasi printstring username ke kode shell.c pada bagian berikut:
+shell.c
+```c
+printString("Welcome to EorzeOS!\n");  
+while (1) {...
+}```
+Implementasi kodenya:
+```c
+printString(username);  
+    if (currentGC == STORM) printString("@Storm");  
+    else if (currentGC == SERPENT) printString("@Serpent");  
+    else if (currentGC == FLAME) printString("@Flame");  
+    printString("> ");
+```
+
 
 # Soal 5
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
