@@ -302,7 +302,14 @@ Memastikan seluruh layar dibersihkan dan diberi warna sesuai Grand Company.
 `putInMemory` langsung mengakses memori video.   
 
 ## Dokumentasi
-
+![Image](https://github.com/user-attachments/assets/5876ca39-b890-4410-a618-1300ddd59ed8)
+![Image](https://github.com/user-attachments/assets/fc206c9d-00ad-437d-803b-2b3a215143b7)
+![Image](https://github.com/user-attachments/assets/b5f48ac3-8cd2-4aaf-9c05-45630dd33aa0)
+![Image](https://github.com/user-attachments/assets/981b577f-afd1-4bd8-8cb4-e6a21f292cd8)
+![Image](https://github.com/user-attachments/assets/255c42d9-cade-4cbd-a011-16be490453a5)
+![Image](https://github.com/user-attachments/assets/c887bad8-db3f-4ff4-b3c7-ed5a63a5cf1b)
+![Image](https://github.com/user-attachments/assets/4a592d5a-6009-49af-b7f0-ca464e268a0f)
+![Image](https://github.com/user-attachments/assets/c411e89b-e987-4cf4-ba4b-1e62594a557e)
 
 
 # Soal 5
