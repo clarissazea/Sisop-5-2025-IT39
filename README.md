@@ -243,12 +243,13 @@ Fungsi `clearScreen(textColor)` dipanggil untuk membersihkan terminal dengan war
 Variabel `currentGC` diatur untuk mengubah user pada prompt.   
 
 Setelah masuk Grand Company, nama pengguna berubah menjadi user@Storm, user@Serpent, atau user@Flame.   
-Tambahkan implementasi printstring username ke kode shell.c pada bagian berikut:
+Tambahkan implementasi `printString(username)` ke kode shell.c pada bagian berikut:   
 shell.c
 ```c
 printString("Welcome to EorzeOS!\n");  
 while (1) {...
-}```
+}
+```
 Implementasi kodenya:
 ```c
 printString(username);  
