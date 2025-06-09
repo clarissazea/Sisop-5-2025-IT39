@@ -181,7 +181,7 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 ## Laporan
 
 Pertama-tama kami melengkapi fungsi yang ada di `kernel.c` sebagai file utama untuk menjalankan OS.
-```
+```c
 int textColor = 0x07; //default (putih)
 
 int main() {
@@ -199,7 +199,7 @@ void printString(char *str) {
 Mendeklarasikan textColor untuk warna text yang akan digunakan di fungsi `clearScreen`. Di fungsi utama `int main()` membersihkan layar lalu memanggil fungsi `shell()` yang ada di file [shell.c](src/shell.c).
 Fungsi `printString` untuk memunculkan output di layar, menggunakan while loop dan `interrupt` yang sebelumnya dideklarasikan di file [kernel.asm](src/kernel.asm).
 Kemudian fungsi `readString` untuk membaca input dari user
-```
+```c
 void readString(char *buf) {
   int i = 0;
   char c;
@@ -223,11 +223,49 @@ void readString(char *buf) {
 ```
 variabel `buf` adalah imput dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.
 Fungsi `clearScreen` dijelaskan di [Soal 4](###Soal-4)
-### Soal 1
 
+### Soal 1
+Nomor 1 adalah mengulang apa yang user input-kan. Ini ada di dalam fungsi `shell` di file [shell.c](src/shell.c).
+```c
+void shell() {
+    // ...
+    while (1) {
+        // ...
+
+        readString(buf);
+        parseCommand(buf, cmd, args);
+
+	// ...
+
+	else {
+            printString(buf);
+            printString("\r\n");
+        }
+    }
+}
+```
+Dalam while loop, fungsi `readString` membaca input dari user. Jika input user tidak memenuhi kondisi tertentu (soal lain), maka memunculkan output berupa apa yang user input-kan.
 
 ### Soal 2
+Nomor 2 adalah memunculkan output `gurt` saat user meng-input-kan `yo`, dan sebaliknya. Ini ada di dalam fungsi `shell` di file [shell.c](src/shell.c).
+```c
+void shell() {
+    // ...
+    while (1) {
+        // ...
 
+        readString(buf);
+        parseCommand(buf, cmd, args);
+
+	if (strcmp(cmd, "yo")) {
+            printString("gurt\r\n");
+        } else if (strcmp(cmd, "gurt")) {
+            printString("yo\r\n");
+    	}
+
+	// ...
+}
+```
 
 ### Soal 3
 
