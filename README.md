@@ -446,8 +446,109 @@ Memastikan seluruh layar dibersihkan dan diberi warna sesuai Grand Company.
 ### Soal 5
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
 
+Shell mendukung operasi aritmatika dasar menggunakan perintah:
+
+- `add <x> <y>` → menghitung penjumlahan x + y.
+- `sub <x> <y>` → menghitung pengurangan x - y.
+- `mul <x> <y>` → menghitung perkalian x * y.
+- `div <x> <y>` → menghitung pembagian x / y.
+
+Analisis Implementasi
+
+```
+else if (strcmp(cmd, "add") || strcmp(cmd, "sub") || strcmp(cmd, "mul") || strcmp(cmd, "div")) {
+    if (args[0][0] == '\0' || args[1][0] == '\0') {
+        printString("Error: Missing arguments\r\n");
+    } else {
+        int a = atoi(args[0]);
+        int b = atoi(args[1]);
+        int result = 0;
+        char resStr[64];
+
+        if (strcmp(cmd, "add")) result = a + b;
+        else if (strcmp(cmd, "sub")) result = a - b;
+        else if (strcmp(cmd, "mul")) result = a * b;
+        else if (strcmp(cmd, "div")) result = div(a, b);
+
+        itoa(result, resStr);
+        printString(resStr);
+        printString("\r\n");
+    }
+}
+```
+
+Penjelasan code:
+- Shell memeriksa apakah perintah yang dimasukkan adalah salah satu dari "add", "sub", "mul", atau "div".
+- Shell memeriksa apakah argumen lengkap `(args[0]` dan `args[1])` telah diberikan, jika tidak shell akan mencetak error.
+- Argumen dikonversi ke integer menggunakan `atoi()`.
+- Shell melakukan perhitungan sesuai perintah.
+- Hasil konversi ke string dengan `itoa()` kemudian dicetak.
+
+Penjelasan Alur:
+1. Shell membaca perintah dan memeriksa apakah itu add, sub, mul, atau div.
+2. Shell memeriksa apakah kedua argumen tersedia.
+3. Shell mengonversi argumen ke integer.
+4. Shell melakukan operasi sesuai perintah:
+
+	add → `a + b`
+
+	sub → `a - b`
+
+	mul → `a * b`
+
+	div → `div(a, b)`
+
+5. Shell mencetak hasil.
+
+  
 ### Soal 6
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
+
+Shell memiliki perintah `"yogurt"` yang akan mencetak salah satu dari tiga kata kunci secara acak:
+- `"yo"`
+- `"ts unami gng </3"`
+- `"sygau"`
+
+Pemilihan dilakukan dengan memanfaatkan nilai tick BIOS.
+
+
+Analisis Implementasi:
+
+```
+void handleYogurt() {
+    char responses[3][100];
+    int count, tick;
+
+    strcpy(responses[0], "yo");
+    strcpy(responses[1], "ts unami gng </3");
+    strcpy(responses[2], "sygau");
+    count = 3;
+
+    tick = mod(getBiosTick(), count);
+
+    printString("gurt> ");
+    printString(responses[tick]);
+    printString("\r\n");
+}
+```
+
+Penjelasan code:
+
+- Array `responses[]` menyimpan tiga string yang akan dipilih secara random.
+- Fungsi `getBiosTick()` mengembalikan tick BIOS saat ini (counter waktu). Nilai ini di-modulus-kan `(mod(getBiosTick(), count))` untuk memilih salah satu index array.
+- Shell mencetak `"gurt> "` diikuti salah satu dari ketiga kata kunci tersebut.
+
+
+Penjelasan Alur:
+
+1. Pengguna mengetikkan `"yogurt"`.
+2. Shell memanggil fungsi `handleYogurt()`.
+3. Fungsi `getBiosTick()` dipanggil untuk mendapatkan tick BIOS.
+4. Tick BIOS di-modulus-kan dengan `count=3` agar hasil index antara 0-2.
+5. Shell mencetak `"gurt> "` diikuti kata yang dipilih.
+
+#### Dokumentasi
+
 
 ### Soal 7
 Untuk nomor 7 yaitu membuat makefile
