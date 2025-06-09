@@ -202,12 +202,14 @@ Implementasi Kode:
 Edit pada file Shell.c
 Pada bagian setelah if else berikut 
 ```c
-if (strcmp(cmd, "yo")) {...}```   
+if (strcmp(cmd, "yo")) {...}
+```
 Tepatnya setelah di bagian
 ```c
 printString("Username changed to user\r\n");  
         }  
-    }```   
+    }
+```
 
 Tambahkan kode berikut:
 ```c
@@ -232,7 +234,8 @@ Tambahkan kode berikut:
         clearScreen(textColor);  
         currentGC = NONE;  
         printString("Para Grand Company sedih, kamu netral.\r\n");  
-    }```
+    }
+```
 
 # Soal 5
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
