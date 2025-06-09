@@ -312,8 +312,8 @@ Memastikan seluruh layar dibersihkan dan diberi warna sesuai Grand Company.
 ![Image](https://github.com/user-attachments/assets/c411e89b-e987-4cf4-ba4b-1e62594a557e)
 
 
-# Soal 5
+### Soal 5
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
 
-# Soal 6
+### Soal 6
 Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
