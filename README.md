@@ -320,7 +320,8 @@ Penjelasan alur:
 
 #### Dokumentasi
 
-![image](https://github.com/user-attachments/assets/ccd4565b-9993-490c-929e-f60938489d53)
+![image](https://github.com/user-attachments/assets/25481d03-a251-4479-8eb1-8a06f4c7b6af)
+
 
 
 ### Soal 4
