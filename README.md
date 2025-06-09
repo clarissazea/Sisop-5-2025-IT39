@@ -245,6 +245,8 @@ void shell() {
 }
 ```
 Dalam while loop, fungsi `readString` membaca input dari user. Jika input user tidak memenuhi kondisi tertentu (soal lain), maka memunculkan output berupa apa yang user input-kan.
+#### Dokumentasi
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/a3c3eb19-0612-4c43-8118-58c3a0f8e0c9" />
 
 ### Soal 2
 Nomor 2 adalah memunculkan output `gurt` saat user meng-input-kan `yo`, dan sebaliknya. Ini ada di dalam fungsi `shell` di file [shell.c](src/shell.c).
@@ -266,6 +268,8 @@ void shell() {
 	// ...
 }
 ```
+#### Dokumentasi
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/7cde0a10-4334-4e19-a11c-909347389a15" />
 
 ### Soal 3
 
@@ -382,7 +386,7 @@ Mengosongkan semua karakter layar (' ') dan mewarnainya dengan atribut `textColo
 Memastikan seluruh layar dibersihkan dan diberi warna sesuai Grand Company.   
 `putInMemory` langsung mengakses memori video.   
 
-## Dokumentasi
+#### Dokumentasi
 ![Image](https://github.com/user-attachments/assets/5876ca39-b890-4410-a618-1300ddd59ed8)
 ![Image](https://github.com/user-attachments/assets/fc206c9d-00ad-437d-803b-2b3a215143b7)
 ![Image](https://github.com/user-attachments/assets/b5f48ac3-8cd2-4aaf-9c05-45630dd33aa0)
