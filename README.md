@@ -505,7 +505,8 @@ Penjelasan Alur:
 
 #### Dokumentasi
 
-![image](https://github.com/user-attachments/assets/2baeb317-f60c-4646-b193-7e6e05595543)
+![image](https://github.com/user-attachments/assets/ae952f71-3b9a-4c37-9daf-12e492b19916)
+
 
   
 ### Soal 6
