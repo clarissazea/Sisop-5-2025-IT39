@@ -556,7 +556,8 @@ Penjelasan Alur:
 
 #### Dokumentasi
 
-![image](https://github.com/user-attachments/assets/b681cb08-ca58-4730-bf9f-69b1632ab84a)
+![image](https://github.com/user-attachments/assets/cca5ffe4-8dcf-4851-9b20-9786e5ace5c3)
+
 
 
 ### Soal 7
