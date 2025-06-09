@@ -320,6 +320,9 @@ Penjelasan alur:
 
 #### Dokumentasi
 
+![image](https://github.com/user-attachments/assets/ccd4565b-9993-490c-929e-f60938489d53)
+
+
 ### Soal 4
 Dikerjakan oleh Ahmad Wildan Fawwaz (5027241001)
 
