@@ -556,6 +556,8 @@ Penjelasan Alur:
 
 #### Dokumentasi
 
+![image](https://github.com/user-attachments/assets/b681cb08-ca58-4730-bf9f-69b1632ab84a)
+
 
 ### Soal 7
 Untuk nomor 7 yaitu membuat makefile
