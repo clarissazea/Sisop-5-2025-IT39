@@ -180,4 +180,28 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
-> Isi sesuai pengerjaan.
+# Soal 1
+Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
+
+# Soal 2
+Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
+
+# Soal 3
+Dikerjakan oleh Muhammad Rafi' Adly (5027241082)
+
+# Soal 4
+Dikerjakan oleh Ahmad Wildan Fawwaz (5027241001)
+
+Inti soal:    
+- grandcompany maelstrom: clear screen + teks jadi merah + prompt jadi user@Storm
+- grandcompany twinadder: clear screen + teks jadi kuning + prompt jadi user@Serpent
+- grandcompany immortalflames: clear screen + teks jadi biru + prompt jadi user@Flame
+- grandcompany <selain atau kosong>: tampilkan pesan error.  
+
+
+
+# Soal 5
+Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
+
+# Soal 6
+Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
