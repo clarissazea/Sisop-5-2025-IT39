@@ -180,7 +180,49 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
-Pertama-tama kami melengkapi fungsi yang ada di `kernel.c`
+Pertama-tama kami melengkapi fungsi yang ada di `kernel.c` sebagai file utama untuk menjalankan OS.
+```
+int textColor = 0x07; //default (putih)
+
+int main() {
+  clearScreen(textColor);
+  shell();
+}
+
+void printString(char *str) {
+  while (*str != '\0') {
+    interrupt(0x10, 0x0E00 + *str, 0, 0, 0);
+    str++;
+  }
+}
+```
+Mendeklarasikan textColor untuk warna text yang akan digunakan di fungsi `clearScreen`. Di fungsi utama `int main()` membersihkan layar lalu memanggil fungsi `shell()` yang ada di file [shell.c](src/shell.c).
+Fungsi `printString` untuk memunculkan output di layar, menggunakan while loop dan `interrupt` yang sebelumnya dideklarasikan di file [kernel.asm](src/kernel.asm).
+Kemudian fungsi `readString` untuk membaca input dari user
+```
+void readString(char *buf) {
+  int i = 0;
+  char c;
+  while (1) {
+    c = interrupt(0x16, 0x0000, 0, 0, 0) & 0xFF;
+    if (c == 13) {
+      buf[i] = '\0';
+      printString("\r\n");
+      break;
+    } else if (c == 8) {
+      if (i > 0) {
+        i--;
+        printString("\b \b");
+      }
+    } else {
+      buf[i++] = c;
+      interrupt(0x10, 0x0E00 + c, 0, 0, 0);
+    }
+  }
+}
+```
+variabel `buf` adalah imput dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.
+Fungsi `clearScreen` dijelaskan di [Soal 4](###Soal-4)
 ### Soal 1
 
 
