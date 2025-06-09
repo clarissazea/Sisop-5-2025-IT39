@@ -291,7 +291,7 @@ Perintah:
 
 Prompt shell akan menampilkan `<username> >` setiap kali menerima input berikutnya.
 
-```
+```c
 else if (strcmp(cmd, "user")) {
     if (args[0][0] != '\0') {
         strcpy(username, args[0]);
@@ -459,7 +459,7 @@ Shell mendukung operasi aritmatika dasar menggunakan perintah:
 
 Analisis Implementasi
 
-```
+```c
 else if (strcmp(cmd, "add") || strcmp(cmd, "sub") || strcmp(cmd, "mul") || strcmp(cmd, "div")) {
     if (args[0][0] == '\0' || args[1][0] == '\0') {
         printString("Error: Missing arguments\r\n");
@@ -523,7 +523,7 @@ Pemilihan dilakukan dengan memanfaatkan nilai tick BIOS.
 
 Analisis Implementasi:
 
-```
+```c
 void handleYogurt() {
     char responses[3][100];
     int count, tick;
