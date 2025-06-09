@@ -1,4 +1,4 @@
-# Sisop-5-2025-IT-Template
+# Sisop-5-2025-IT39
 
 ## Kelompok
 
@@ -115,7 +115,7 @@ Pada suatu hari, anda merasa sangat lelah dari segala macam praktikum yang sudah
    gurt> sygau
    ```
 
-8. Perusahaan mesin "Garlond Ironworks" tiba-tiba lelah mengurus permintaan senjata perang untuk orang ke-148649813234 yang berusaha menghadapi final boss yang sama, sehingga mereka perlu bantuan kamu untuk melengkapi `Makefile` yang diberikan dengan command-command yang sesuai untuk compile seluruh operating system ini.
+7. Perusahaan mesin "Garlond Ironworks" tiba-tiba lelah mengurus permintaan senjata perang untuk orang ke-148649813234 yang berusaha menghadapi final boss yang sama, sehingga mereka perlu bantuan kamu untuk melengkapi `Makefile` yang diberikan dengan command-command yang sesuai untuk compile seluruh operating system ini.
 
 ## Petunjuk Soal
 
@@ -180,6 +180,7 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
+Pertama-tama kami melengkapi fungsi yang ada di `kernel.c`
 ### Soal 1
 
 
