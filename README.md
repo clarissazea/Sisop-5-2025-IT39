@@ -196,8 +196,8 @@ void printString(char *str) {
   }
 }
 ```
-Mendeklarasikan textColor untuk warna text yang akan digunakan di fungsi `clearScreen`. Di fungsi utama `int main()` membersihkan layar lalu memanggil fungsi `shell()` yang ada di file [shell.c](src/shell.c).
-Fungsi `printString` untuk memunculkan output di layar, menggunakan while loop dan `interrupt` yang sebelumnya dideklarasikan di file [kernel.asm](src/kernel.asm).
+Mendeklarasikan textColor untuk warna text yang akan digunakan di fungsi `clearScreen`. Di fungsi utama `int main()` membersihkan layar lalu memanggil fungsi `shell()` yang ada di file [shell.c](src/shell.c).  
+Fungsi `printString` untuk memunculkan output di layar, menggunakan while loop dan `interrupt` yang sebelumnya dideklarasikan di file [kernel.asm](src/kernel.asm).  
 Kemudian fungsi `readString` untuk membaca input dari user
 ```c
 void readString(char *buf) {
@@ -221,7 +221,7 @@ void readString(char *buf) {
   }
 }
 ```
-variabel `buf` adalah imput dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.
+variabel `buf` adalah imput dari user. Variabel `c` digunakan untuk menyimpan dan membaca input menggunakan `interrupt` yang berupa ASCII. Jika user menekan `ENTER` (ASCII = 13), maka kursor akan bergerak ke bawah dan keluar dari looping. Jika user menekan `BACKSPACE` (ASCII = 8), maka kursor akan bergerak ke kiri dan menghapus input user sebelumnya.  
 Fungsi `clearScreen` dijelaskan di [Soal 4](###Soal-4)
 
 ### Soal 1
@@ -422,6 +422,6 @@ clean:
 	rm -f bin/*
 run: clean build
 ```
-makefile ini berfungsi untuk meng-compile file C dan Assembly menggunakan nasm untuk assembly, dan bcc untuk file C. Kemudian kami menambahkan fitur clean dan run. 
-`clean` berfungsi untuk menghapus semua file yang ada di directory bin/ 
+makefile ini berfungsi untuk meng-compile file C dan Assembly menggunakan nasm untuk assembly, dan bcc untuk file C. Untuk pengisiannya kami samakan dengan langkah-langkah pembuatan OS yang ada di modul. Kemudian kami menambahkan fitur clean dan run.  
+`clean` berfungsi untuk menghapus semua file yang ada di directory bin/  
 `run` berfungsi untuk menjalankan perintah clean dan build, yaitu menghapus semua file output dan meng-compile-nya kembali beserta dengan floppy.img
