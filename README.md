@@ -280,7 +280,45 @@ void shell() {
 <img width="960" alt="image" src="https://github.com/user-attachments/assets/7cde0a10-4334-4e19-a11c-909347389a15" />
 
 ### Soal 3
+Dikerjakan oleh Clarissa Aydin Rahmazea (5027241014)
 
+Shell harus mendukung perintah untuk mengubah username prompt.
+
+Perintah:
+
+- `user <username>` → untuk mengganti username menjadi `<username>`.
+- `user` → mengembalikan username ke default `(user)`.
+
+Prompt shell akan menampilkan `<username> >` setiap kali menerima input berikutnya.
+
+```
+else if (strcmp(cmd, "user")) {
+    if (args[0][0] != '\0') {
+        strcpy(username, args[0]);
+        printString("Username changed to ");
+        printString(username);
+        printString("\r\n");
+    } else {
+        strcpy(username, "user");
+        printString("Username changed to user\r\n");
+    }
+}
+```
+
+Penjelasan code:
+- Command `"user"` diperiksa menggunakan `strcmp(cmd, "user").`
+- Argumen pertama `(args[0])` dicek apakah kosong `('\0').` Jika tidak kosong, maka `username` di-update dengan nilai dari `args[0]` menggunakan `strcpy()`.
+- Jika kosong, username di-reset ke default `"user"`.
+- Setelah username diubah, shell menampilkan notifikasi: `"Username changed to <username>"` atau `"Username changed to user"`.
+
+Penjelasan alur:
+1. Pengguna memasukkan perintah user diikuti nama.
+2. Shell membaca argumen pertama (jika ada).
+3. Jika ada nama baru, shell mengupdate variabel username.
+4. Jika tidak ada nama baru, shell mengembalikan username ke default.
+5. Username baru akan tampil di prompt pada iterasi berikutnya:
+
+#### Dokumentasi
 
 ### Soal 4
 Dikerjakan oleh Ahmad Wildan Fawwaz (5027241001)
