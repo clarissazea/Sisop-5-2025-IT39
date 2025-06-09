@@ -202,7 +202,7 @@ Implementasi Kode:
 Edit pada file Shell.c
 Pada bagian setelah if else berikut 
 ```c
-if (strcmp(cmd, "yo")) {```   
+if (strcmp(cmd, "yo")) {...}```   
 Tepatnya setelah di bagian
 ```c
 printString("Username changed to user\r\n");  
